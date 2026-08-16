@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Dashboard — Recommendation Engine</title>
+<link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+</head>
+<body data-user-id="{{ user_id }}">
+
+<div class="topbar">
+  <div class="topbar-inner">
+    <a href="/" class="brand"><span class="brand-mark">&#9670;</span> MATCH.ENGINE</a>
+    <span class="brand-sub">content-based recommendations · tf-idf · cosine similarity</span>
+  </div>
+</div>
+
+<main class="dash-shell">
+
+  <aside class="profile-card" id="profile-card">
+    <p class="eyebrow">PROFILE</p>
+    <div id="profile-loading" class="loading-line">Loading profile…</div>
+    <div id="profile-content" hidden>
+      <h2 id="profile-name"></h2>
+      <p id="profile-education" class="profile-education"></p>
+
+      <div class="profile-field">
+        <span class="profile-field-label">Experience level</span>
+        <span id="profile-level" class="pill"></span>
+      </div>
+
+      <div class="profile-field">
+        <span class="profile-field-label">Career goal</span>
+        <p id="profile-goal"></p>
+      </div>
+
+      <div class="profile-field">
+        <span class="profile-field-label">Skills</span>
+        <div id="profile-skills" class="tag-list"></div>
+      </div>
+
+      <div class="profile-field">
+        <span class="profile-field-label">Interests</span>
+        <div id="profile-interests" class="tag-list"></div>
+      </div>
+
+      <a href="/" class="edit-link">+ New profile</a>
+    </div>
+  </aside>
+
+  <section class="results-area">
+    <div id="results-loading" class="loading-line results-loading">Computing recommendations…</div>
+
+    <div id="results-content" hidden>
+      <div class="results-tabs" role="tablist">
+        <button class="tab-btn active" data-target="internship">Internships</button>
+        <button class="tab-btn" data-target="project">Projects</button>
+        <button class="tab-btn" data-target="learning_resource">Learning Resources</button>
+      </div>
+
+      <div class="results-panel active" id="panel-internship"></div>
+      <div class="results-panel" id="panel-project"></div>
+      <div class="results-panel" id="panel-learning_resource"></div>
+    </div>
+  </section>
+
+</main>
+
+<template id="card-template">
+  <article class="rec-card">
+    <div class="rec-card-head">
+      <div>
+        <h3 class="rec-title"></h3>
+        <p class="rec-subtitle"></p>
+      </div>
+      <div class="match-meter">
+        <span class="match-score"></span>
+        <div class="match-bar"><div class="match-bar-fill"></div></div>
+      </div>
+    </div>
+    <p class="rec-explanation"></p>
+    <div class="rec-tags"></div>
+    <div class="rec-breakdown"></div>
+    <div class="rec-meta"></div>
+  </article>
+</template>
+
+<script src="{{ url_for('static', filename='js/dashboard.js') }}"></script>
+</body>
+</html>

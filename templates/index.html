@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Build Your Profile — Recommendation Engine</title>
+<link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+</head>
+<body>
+
+<div class="topbar">
+  <div class="topbar-inner">
+    <span class="brand"><span class="brand-mark">&#9670;</span> MATCH.ENGINE</span>
+    <span class="brand-sub">content-based recommendations · tf-idf · cosine similarity</span>
+  </div>
+</div>
+
+<main class="form-shell">
+  <section class="form-intro">
+    <p class="eyebrow">01 / PROFILE INPUT</p>
+    <h1>Tell the engine who you are.</h1>
+    <p class="form-lede">
+      Everything below feeds directly into the recommendation engine — your skills,
+      interests, career goal and experience level are vectorized and matched against
+      live internship, project and learning-resource datasets. Nothing here is prewired.
+    </p>
+  </section>
+
+  <form id="profile-form" class="profile-form" novalidate>
+    <div class="field">
+      <label for="name">Full name</label>
+      <input type="text" id="name" name="name" placeholder="e.g. Ananya Sharma" required>
+    </div>
+
+    <div class="field">
+      <label for="education">Education</label>
+      <input type="text" id="education" name="education" placeholder="e.g. B.Tech Computer Science, 3rd Year" required>
+    </div>
+
+    <div class="field">
+      <label for="skills">Skills <span class="hint">comma-separated</span></label>
+      <input type="text" id="skills" name="skills" placeholder="e.g. Python, Pandas, Machine Learning, SQL" required>
+    </div>
+
+    <div class="field">
+      <label for="interests">Interests <span class="hint">comma-separated</span></label>
+      <input type="text" id="interests" name="interests" placeholder="e.g. Data Science, Artificial Intelligence" required>
+    </div>
+
+    <div class="field-row">
+      <div class="field">
+        <label for="experience_level">Experience level</label>
+        <select id="experience_level" name="experience_level" required>
+          <option value="" disabled selected>Select level</option>
+          <option value="Beginner">Beginner</option>
+          <option value="Intermediate">Intermediate</option>
+          <option value="Advanced">Advanced</option>
+        </select>
+      </div>
+
+      <div class="field">
+        <label for="career_goal">Career goal</label>
+        <input type="text" id="career_goal" name="career_goal" placeholder="e.g. become a machine learning engineer" required>
+      </div>
+    </div>
+
+    <div id="form-error" class="form-error" hidden></div>
+
+    <button type="submit" id="submit-btn" class="btn-primary">
+      Generate my recommendations
+      <span class="btn-arrow">&#8594;</span>
+    </button>
+  </form>
+
+  <section class="existing-profiles" id="existing-profiles-section" hidden>
+    <p class="eyebrow">OR CONTINUE AS</p>
+    <div id="existing-profiles-list" class="chip-list"></div>
+  </section>
+</main>
+
+<script src="{{ url_for('static', filename='js/dashboard.js') }}"></script>
+<script>
+  // Profile-form-specific logic lives inline since it's small and only used here.
+  document.addEventListener('DOMContentLoaded', () => {
+    const form = document.getElementById('profile-form');
+    const errorBox = document.getElementById('form-error');
+    const submitBtn = document.getElementById('submit-btn');
+
+    form.addEventListener('submit', async (e) => {
+      e.preventDefault();
+      errorBox.hidden = true;
+      submitBtn.disabled = true;
+      submitBtn.textContent = 'Building profile…';
+
+      const payload = {
+        name: document.getElementById('name').value.trim(),
+        education: document.getElementById('education').value.trim(),
+        skills: document.getElementById('skills').value.trim(),
+        interests: document.getElementById('interests').value.trim(),
+        experience_level: document.getElementById('experience_level').value,
+        career_goal: document.getElementById('career_goal').value.trim(),
+      };
+
+      try {
+        const res = await fetch('/api/profile', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify(payload),
+        });
+        const data = await res.json();
+
+        if (!res.ok) {
+          throw new Error(data.error || 'Something went wrong.');
+        }
+
+        window.location.href = `/dashboard/${data.id}`;
+      } catch (err) {
+        errorBox.textContent = err.message;
+        errorBox.hidden = false;
+        submitBtn.disabled = false;
+        submitBtn.innerHTML = 'Generate my recommendations <span class="btn-arrow">&#8594;</span>';
+      }
+    });
+
+    // Load existing profiles so a returning user can jump straight to their dashboard.
+    fetch('/api/profiles')
+      .then((r) => r.json())
+      .then((profiles) => {
+        if (!Array.isArray(profiles) || profiles.length === 0) return;
+        const section = document.getElementById('existing-profiles-section');
+        const list = document.getElementById('existing-profiles-list');
+        profiles.slice(0, 6).forEach((p) => {
+          const chip = document.createElement('a');
+          chip.href = `/dashboard/${p.id}`;
+          chip.className = 'chip';
+          chip.textContent = p.name;
+          list.appendChild(chip);
+        });
+        section.hidden = false;
+      })
+      .catch(() => {});
+  });
+</script>
+
+</body>
+</html>

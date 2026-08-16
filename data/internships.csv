@@ -1,0 +1,21 @@
+id,title,company,description,required_skills,domain,level,duration,location,mode
+1,Frontend Developer Intern,PixelCraft Studios,Build responsive UI components and improve accessibility for a customer-facing web app.,HTML;CSS;JavaScript;React;Git,Web Development,Beginner,3 months,Bangalore,Hybrid
+2,Backend Developer Intern,DataForge Systems,Design REST APIs and optimize database queries for a high-traffic SaaS platform.,Python;Flask;SQL;REST API;Git,Web Development,Intermediate,6 months,Remote,Remote
+3,Full Stack Developer Intern,NimbusTech,Work across the stack building features end to end for an internal tools platform.,JavaScript;React;Node.js;MongoDB;Git,Web Development,Intermediate,6 months,Pune,Hybrid
+4,Machine Learning Intern,VisionAI Labs,Train and evaluate computer vision models for defect detection on manufacturing lines.,Python;Machine Learning;TensorFlow;NumPy;Pandas,Artificial Intelligence,Intermediate,6 months,Hyderabad,Onsite
+5,Data Science Intern,QuantEdge Analytics,Analyze customer behaviour data and build predictive churn models.,Python;Pandas;NumPy;Scikit-learn;SQL;Statistics,Data Science,Intermediate,4 months,Remote,Remote
+6,NLP Research Intern,LinguaCore AI,Fine-tune transformer models for sentiment analysis and text classification tasks.,Python;NLP;PyTorch;Transformers;Machine Learning,Artificial Intelligence,Advanced,6 months,Remote,Remote
+7,Data Analyst Intern,MarketPulse,Build dashboards and generate weekly business insights from sales data.,SQL;Excel;Power BI;Python;Pandas,Data Science,Beginner,3 months,Mumbai,Onsite
+8,Android Developer Intern,AppNova,Develop and test features for a consumer Android app used by 1M+ users.,Kotlin;Java;Android SDK;Git;REST API,Mobile Development,Intermediate,6 months,Bangalore,Onsite
+9,iOS Developer Intern,SwiftWorks,Build UI screens and integrate APIs for an iOS fitness tracking app.,Swift;iOS;Xcode;REST API;Git,Mobile Development,Beginner,3 months,Remote,Remote
+10,Cloud Engineering Intern,CloudSpan Technologies,Automate deployment pipelines and manage containerized workloads on AWS.,AWS;Docker;Kubernetes;Linux;CI/CD,Cloud Computing,Advanced,6 months,Remote,Remote
+11,DevOps Intern,BuildRight Inc,Set up CI/CD pipelines and monitor infrastructure health for microservices.,Docker;Jenkins;Linux;Git;AWS,Cloud Computing,Intermediate,4 months,Chennai,Hybrid
+12,Cybersecurity Intern,SecureNet Labs,Perform vulnerability assessments and support incident response for client systems.,Networking;Linux;Python;Security Fundamentals;Cryptography,Cybersecurity,Intermediate,6 months,Delhi,Onsite
+13,UI/UX Design Intern,DesignLoop Studio,Create wireframes and prototypes and conduct usability testing for mobile apps.,Figma;UI Design;UX Research;Prototyping;Adobe XD,UI/UX Design,Beginner,3 months,Remote,Remote
+14,Product Design Intern,LaunchPad Labs,Own the design process from research to high-fidelity prototypes for a new feature.,Figma;UX Research;Wireframing;Prototyping,UI/UX Design,Intermediate,4 months,Bangalore,Hybrid
+15,Blockchain Developer Intern,ChainForge,Build and test smart contracts for a decentralized finance application.,Solidity;Blockchain;JavaScript;Ethereum;Git,Blockchain,Advanced,6 months,Remote,Remote
+16,Game Development Intern,PixelRealm Games,Implement gameplay mechanics and optimize performance in Unity.,C#;Unity;Game Design;Git,Game Development,Beginner,3 months,Pune,Onsite
+17,QA / Test Automation Intern,VerifyLogic,Write automated test suites and perform regression testing for a web platform.,Python;Selenium;Test Automation;Git;SQL,Web Development,Beginner,3 months,Remote,Remote
+18,Data Engineering Intern,PipelineWorks,Build and maintain ETL pipelines for large-scale analytics data.,Python;SQL;Apache Spark;Airflow;AWS,Data Science,Advanced,6 months,Hyderabad,Hybrid
+19,AI Research Intern,DeepMind Foundry,Explore reinforcement learning algorithms and publish internal findings.,Python;Machine Learning;PyTorch;Reinforcement Learning;Research,Artificial Intelligence,Advanced,6 months,Remote,Remote
+20,Business Analyst Intern,InsightWorks Consulting,Translate business requirements into data-driven recommendations for clients.,SQL;Excel;Communication;Python;Statistics,Data Science,Beginner,3 months,Mumbai,Hybrid

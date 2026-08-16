@@ -1,0 +1,26 @@
+id,title,description,skills_required,domain,difficulty_level,category
+1,Personal Portfolio Website,Build a responsive personal portfolio site with animations and a contact form.,HTML;CSS;JavaScript;Git,Web Development,Beginner,Web App
+2,E-commerce Store with Cart,Create a full online store with product catalog cart and checkout flow.,JavaScript;React;Node.js;MongoDB;REST API,Web Development,Intermediate,Web App
+3,Blog Platform with Auth,Build a multi-user blogging platform with authentication and comments.,Python;Flask;SQL;HTML;CSS,Web Development,Beginner,Web App
+4,Real-time Chat Application,Develop a real-time chat app using websockets with multiple rooms.,JavaScript;Node.js;WebSockets;React,Web Development,Intermediate,Web App
+5,Movie Recommendation System,Build a content-based movie recommender using TF-IDF and cosine similarity.,Python;Pandas;Scikit-learn;NumPy,Data Science,Intermediate,ML Model
+6,Customer Churn Prediction,Train a classification model to predict customer churn from usage data.,Python;Pandas;Scikit-learn;Machine Learning;Statistics,Data Science,Intermediate,ML Model
+7,Handwritten Digit Recognition,Build a CNN to classify handwritten digits from the MNIST dataset.,Python;TensorFlow;Machine Learning;NumPy,Artificial Intelligence,Intermediate,ML Model
+8,Sentiment Analysis on Tweets,Classify tweet sentiment using NLP techniques and a transformer model.,Python;NLP;Transformers;PyTorch,Artificial Intelligence,Advanced,ML Model
+9,Sales Dashboard with Power BI,Build an interactive dashboard visualizing regional sales trends.,SQL;Power BI;Excel;Python,Data Science,Beginner,Data Analysis
+10,COVID-19 Data Analysis,Analyze and visualize public COVID-19 datasets to identify trends.,Python;Pandas;NumPy;Data Visualization,Data Science,Beginner,Data Analysis
+11,Expense Tracker Android App,Build a mobile app to track daily expenses with charts and categories.,Kotlin;Android SDK;SQLite;Git,Mobile Development,Beginner,Mobile App
+12,Fitness Tracking iOS App,Create an iOS app that logs workouts and visualizes progress over time.,Swift;iOS;Xcode;REST API,Mobile Development,Intermediate,Mobile App
+13,Cross-platform To-Do App,Build a to-do list app using React Native that works on iOS and Android.,JavaScript;React Native;Git,Mobile Development,Beginner,Mobile App
+14,CI/CD Pipeline for a Web App,Set up an automated build test and deploy pipeline using Docker and GitHub Actions.,Docker;CI/CD;Git;Linux;AWS,Cloud Computing,Intermediate,Automation Tool
+15,Kubernetes Cluster Deployment,Deploy a microservices app on a self-managed Kubernetes cluster.,Kubernetes;Docker;Linux;AWS,Cloud Computing,Advanced,Automation Tool
+16,Network Vulnerability Scanner,Build a tool that scans a local network for open ports and known vulnerabilities.,Python;Networking;Security Fundamentals;Linux,Cybersecurity,Intermediate,Security Tool
+17,Password Strength Analyzer,Create a tool that evaluates password strength and suggests improvements.,Python;Cryptography;Security Fundamentals,Cybersecurity,Beginner,Security Tool
+18,Mobile App UI Redesign Case Study,Redesign an existing app's UI/UX with wireframes prototypes and a usability report.,Figma;UI Design;UX Research;Prototyping,UI/UX Design,Beginner,Design Project
+19,Design System for a Startup,Build a reusable design system with components tokens and documentation.,Figma;UI Design;Prototyping;Adobe XD,UI/UX Design,Intermediate,Design Project
+20,NFT Marketplace Smart Contract,Write and deploy Solidity smart contracts for minting and trading NFTs.,Solidity;Blockchain;Ethereum;JavaScript,Blockchain,Advanced,Web App
+21,2D Platformer Game,Build a 2D platformer game with physics and level design in Unity.,C#;Unity;Game Design,Game Development,Beginner,Game
+22,Multiplayer Quiz Game,Create a real-time multiplayer quiz game with a scoreboard.,JavaScript;Node.js;WebSockets;React,Game Development,Intermediate,Game
+23,ETL Pipeline for Sales Data,Build an ETL pipeline that ingests cleans and loads sales data into a warehouse.,Python;SQL;Apache Spark;Airflow,Data Science,Advanced,Automation Tool
+24,Automated Test Suite for a Web App,Write an automated regression test suite using Selenium for a web application.,Python;Selenium;Test Automation;Git,Web Development,Beginner,Automation Tool
+25,Reinforcement Learning Game Agent,Train a reinforcement learning agent to play a simple grid-based game.,Python;Reinforcement Learning;PyTorch;Machine Learning,Artificial Intelligence,Advanced,ML Model
